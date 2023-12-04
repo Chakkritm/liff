@@ -44,43 +44,16 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
+    
     function createUniversalLink() {
       
     }
 
     async function shareMsg() {
-      alert("shareMsg Start.")
-      let flexmsg = {
-  	    	  "type": "flex",
-            "altText": "this is a flex message",
-            "contents": {
-              "type": "bubble",
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "hello"
-                  },
-                  {
-                    "type": "text",
-                    "text": "world"
-                  }
-                ]
-              }
-            }
-	    	};
-
-        let flexmsg2 = {
-          type: "text",
-          text: "This message was sent by ShareTargetPicker"
-        }
-
       await liff.shareTargetPicker([
         {
-            type: "text",
-            text: "This message was sent by ShareTargetPicker"
+          type: "text",
+          text: "This message was sent by ShareTargetPicker"
         }
       ])
     }
