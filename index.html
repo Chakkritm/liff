@@ -32,7 +32,8 @@
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
+  <button id="btnShare" onclick="shareMsg()">Share Target Picker1</button>
+  <button id="btnShare" onclick="shareMsg2()">Share Target Picker2</button>
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
@@ -75,7 +76,21 @@
           }
         }
       };
-      var message2 = {
+      await liff.shareTargetPicker([flexmsg])
+        .then(() => {
+          console.log('Share target picker successful');
+        })
+        .catch((err) => {
+          console.error('Share target picker failed', err);
+        });
+    }
+
+    async function shareMsg2() {
+      if (!liff.isInClient()) {
+        alert('This feature is only available in the LINE app');
+        return;
+      }
+      var flexmsg = {
         "type": "bubble",
         "header": {
           "type": "box",
