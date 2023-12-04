@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
+
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -44,183 +46,99 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-
     function createUniversalLink() {
-      
+
     }
 
     async function shareMsg() {
 
       let flexmsg = {
-  	    	  "type": "flex",
-	    	  "altText": "this is a flex message",
-	    	  "contents": {
-	    	    "type": "bubble",
-	    	    "body": {
-	    	      "type": "box",
-	    	      "layout": "vertical",
-	    	      "contents": [
-	    	        {
-	    	          "type": "text",
-	    	          "text": "hello"
-	    	        },
-	    	        {
-	    	          "type": "text",
-	    	          "text": "world"
-	    	        }
-	    	      ]
-	    	    }
-	    	  }
-	    	};
+        "type": "flex",
+        "altText": "this is a flex message",
+        "contents": {
+          "type": "bubble",
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [{
+                "type": "text",
+                "text": "hello"
+              },
+              {
+                "type": "text",
+                "text": "world"
+              }
+            ]
+          }
+        }
+      };
 
-        let flexmsg2 = {
-    			  "type": "bubble",
-    			  "header": {
-    			    "type": "box",
-    			    "layout": "vertical",
-    			    "contents": [
-    			      {
-    			        "type": "box",
-    			        "layout": "horizontal",
-    			        "contents": [
-    			          {
-    			            "type": "image",
-    			            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip4.jpg",
-    			            "size": "full",
-    			            "aspectMode": "cover",
-    			            "aspectRatio": "150:196",
-    			            "gravity": "center",
-    			            "flex": 1
-    			          },
-    			          {
-    			            "type": "box",
-    			            "layout": "vertical",
-    			            "contents": [
-    			              {
-    			                "type": "image",
-    			                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip5.jpg",
-    			                "size": "full",
-    			                "aspectMode": "cover",
-    			                "aspectRatio": "150:98",
-    			                "gravity": "center"
-    			              },
-    			              {
-    			                "type": "image",
-    			                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip6.jpg",
-    			                "size": "full",
-    			                "aspectMode": "cover",
-    			                "aspectRatio": "150:98",
-    			                "gravity": "center"
-    			              }
-    			            ],
-    			            "flex": 1
-    			          },
-    			          {
-    			            "type": "box",
-    			            "layout": "horizontal",
-    			            "contents": [
-    			              {
-    			                "type": "text",
-    			                "text": "NEW",
-    			                "size": "xs",
-    			                "color": "#ffffff",
-    			                "align": "center",
-    			                "gravity": "center"
-    			              }
-    			            ],
-    			            "backgroundColor": "#EC3D44",
-    			            "paddingAll": "2px",
-    			            "paddingStart": "4px",
-    			            "paddingEnd": "4px",
-    			            "flex": 0,
-    			            "position": "absolute",
-    			            "offsetStart": "18px",
-    			            "offsetTop": "18px",
-    			            "cornerRadius": "100px",
-    			            "width": "48px",
-    			            "height": "25px"
-    			          }
-    			        ]
-    			      }
-    			    ],
-    			    "paddingAll": "0px"
-    			  },
-    			  "body": {
-    			    "type": "box",
-    			    "layout": "vertical",
-    			    "contents": [
-    			      {
-    			        "type": "box",
-    			        "layout": "vertical",
-    			        "contents": [
-    			          {
-    			            "type": "box",
-    			            "layout": "vertical",
-    			            "contents": [
-    			              {
-    			                "type": "text",
-    			                "contents": [],
-    			                "size": "xl",
-    			                "wrap": true,
-    			                "text": "Cony Residence",
-    			                "color": "#ffffff",
-    			                "weight": "bold"
-    			              },
-    			              {
-    			                "type": "text",
-    			                "text": "3 Bedrooms, ¥35,000",
-    			                "color": "#ffffffcc",
-    			                "size": "sm"
-    			              }
-    			            ],
-    			            "spacing": "sm"
-    			          },
-    			          {
-    			            "type": "box",
-    			            "layout": "vertical",
-    			            "contents": [
-    			              {
-    			                "type": "box",
-    			                "layout": "vertical",
-    			                "contents": [
-    			                  {
-    			                    "type": "text",
-    			                    "contents": [],
-    			                    "size": "sm",
-    			                    "wrap": true,
-    			                    "margin": "lg",
-    			                    "color": "#ffffffde",
-    			                    "text": "Private Pool, Delivery box, Floor heating, Private Cinema"
-    			                  }
-    			                ]
-    			              }
-    			            ],
-    			            "paddingAll": "13px",
-    			            "backgroundColor": "#ffffff1A",
-    			            "cornerRadius": "2px",
-    			            "margin": "xl"
-    			          }
-    			        ]
-    			      }
-    			    ],
-    			    "paddingAll": "20px",
-    			    "backgroundColor": "#464F69"
-    			  }
-    			};
+      let flexmsg2 = {
+        "type": "carousel",
+        "contents": [{
+            "type": "bubble",
+            "body": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [{
+                "type": "text",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "wrap": true
+              }]
+            },
+            "footer": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [{
+                "type": "button",
+                "style": "primary",
+                "action": {
+                  "type": "uri",
+                  "label": "Go",
+                  "uri": "https://example.com"
+                }
+              }]
+            }
+          },
+          {
+            "type": "bubble",
+            "body": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [{
+                "type": "text",
+                "text": "Hello, World!",
+                "wrap": true
+              }]
+            },
+            "footer": {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [{
+                "type": "button",
+                "style": "primary",
+                "action": {
+                  "type": "uri",
+                  "label": "Go",
+                  "uri": "https://example.com"
+                }
+              }]
+            }
+          }
+        ]
+      };
 
 
       await liff.shareTargetPicker(
-        [
-          {
+        [{
             type: "text",
             text: "This message was sent by ShareTargetPicker"
           },
           flexmsg,
           flexmsg2,
-        ],
-    	  {
-    	      isMultiple: true,
-    	  }
+        ], {
+          isMultiple: true,
+        }
       )
     }
 
@@ -257,13 +175,11 @@
 
     async function sendMsg() {
       if (liff.getContext().type !== "none") {
-        await liff.sendMessages([
-          {
-            "type": "sticker",
-            "stickerId": 1,
-            "packageId": 1
-          },
-        ])
+        await liff.sendMessages([{
+          "type": "sticker",
+          "stickerId": 1,
+          "packageId": 1
+        }, ])
         alert("Message sent")
       }
     }
@@ -316,9 +232,12 @@
           liff.login()
         }
       })
-      await liff.init({ liffId: "2001667882-PDnBZ3oJ" })
+      await liff.init({
+        liffId: "2001667882-PDnBZ3oJ"
+      })
     }
     main()
   </script>
 </body>
+
 </html>
